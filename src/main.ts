@@ -1,14 +1,9 @@
-import
-  express,
-  {
-    Express,
-    Request,
-    Response,
-  }
-from "express";
-import
-  HttpStatusCodes
-from "http-status-codes";
+import express, {
+  Express,
+  Request,
+  Response,
+} from "express";
+import HttpStatusCodes from "http-status-codes";
 
 const app: Express = express();
 
