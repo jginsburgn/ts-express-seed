@@ -9,9 +9,10 @@
   "author": "Jonathan Ginsburg",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/main.js",
+    "start": "cd dist && node main.js",
     "build": "npm run clean && npm run copy-static-assets && npm run build-ts",
-    "watch": "npm run copy-static-assets && npx concurrently --kill-others \"npx tsc -w\" \"npx nodemon --inspect dist/main.js\"",
+    "watch": "npm run copy-static-assets && npx concurrently --kill-others \"npx tsc -w\" \"npm run watch-in-dist\"",
+    "watch-in-dist": "cd dist && npx nodemon --inspect main.js",
     "copy-static-assets": "npm run init-dist && cp -R src/static dist",
     "build-ts": "npx tsc",
     "tslint": "npx tslint -c tslint.json -p tsconfig.json",

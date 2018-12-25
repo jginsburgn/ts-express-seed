@@ -7,15 +7,15 @@ import
   }
 from "express";
 import
-  * as httpStatusCodes
+  HttpStatusCodes
 from "http-status-codes";
 
 const app: Express = express();
 
-app.use("/static", express.static("static"));
-
-app.get("/", (req: Request, res: Response) => {
-  res.status(httpStatusCodes.ACCEPTED).send();
+app.get("/", (_: Request, res: Response) => {
+  res.status(HttpStatusCodes.OK).send();
 });
+
+app.use("/static", express.static("static"));
 
 app.listen(3000, "0.0.0.0");
